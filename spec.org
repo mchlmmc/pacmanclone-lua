@@ -1,0 +1,101 @@
+#+TITLE: Specification of Pacman Implementation
+#+AUTHOR: Michael Mamic
+#+DATE: July 6th, 2019
+* Systems of Pacman
+** Sound system
+*** Sounds are organized in layers
+*** Some sounds can block (mute) all other sounds in layer
+*** Each sound has a priority which determines what it can block
+** Animation system
+*** Sprites are loaded from an atlas texture ("spritesheet.png")
+*** Each frame of an animation is a section of the texture
+*** Animations are arrays of frames
+** Game rendering system
+*** The prerendered level background is drawn first
+*** Points and energizers are drawn on top
+*** Characters after that
+*** UI at the very top and bottom
+** UI System
+*** Game state variable are displayed
+**** Level number
+**** Lives
+**** Score
+**** Fruits
+** Update System
+*** Only run game logic if game is ongoing
+*** Handle sound system
+*** Play spawn/death animations if applicable
+*** Update and check the timers
+*** Check collisions
+*** Control Ghosts
+*** Control Player
+* Life cucle of Pacman
+** Load game assets, set global state
+** Convert hardcoded values into useful forms
+** Load the first level
+*** Load in level file
+*** Set state variables
+*** Create objects
+*** Convert map to useful forms
+**** Prerendered background
+**** Pathfinding graph
+** Update with game logic
+** End game on static screens
+*** Game Over
+*** You Win
+* Global State of Pacman
+** Shared state for game logic
+*** Current level
+*** Amount of lives
+*** Score
+*** Points where next life is awarded
+*** Upcoming fruit
+** Assets
+*** Sounds
+*** Images
+*** Animations/Sprites
+** Level data
+*** Character positions
+*** Level topology
+*** Wall color
+*** Point positions
+*** Energizer positions
+*** Points to spawn fruit at
+*** Position of ghost wall
+*** Ghost speeds
+*** Speed of player
+*** Duration of scatter ghost ai phase
+*** Duration of chase ghost ai phase
+*** Amount of times ghosts scatter
+** Level instance specific data
+*** Running or chase mode for ghost ai
+*** Timers for running or chasing
+*** Timers for energizer powerup
+*** Timers for spawn or death animations
+*** Amount of dots on the level
+*** Amount of dots eaten by the player
+*** Amount of ghosts eaten by the player
+*** Amount of times the ghosts have scattered
+** Configured values (constant)
+*** Width and height of each level
+*** Width and height of each game tile
+*** Amount of time that energizers last
+*** Amount of points between lives
+*** Speed of dead ghosts (confusing terminology)
+*** Amount of points that fruit give
+*** Amount of points that killing ghosts gives
+* Ghost AI
+** Pathfinding algorithm plots paths for ghosts to move along
+** Operates on graph generated from level topology
+** Each ghost has a unique AI
+** Ghosts switch movement patterns based on game logic state
+* File layout
+** main.lua is the game's central loops and initializations
+** conf.lua is game configuration file
+** drawing.lua is the game rendering logic
+** sound.lua is the game audio logic
+** player.lua is the player controls logic
+** ghost.lua is the ghost AI logic
+** 1-3.lua are the level data files
+** spritesheet.png is the game's atlas texture
+** sounds contains the sounds used in the game
