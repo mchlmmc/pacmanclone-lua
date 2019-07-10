@@ -8,7 +8,7 @@ blinky = {
    name = "blinky",
    x = 10,
    y = 11,
-   home = {
+   corner = {
 	  x=2,
 	  y=2
    }
@@ -18,7 +18,7 @@ pinky = {
    name = "pinky",
    x = 11,
    y = 11,
-   home = {
+   corner = {
 	  x=21,
 	  y=2
    }
@@ -28,7 +28,7 @@ inky = {
    name = "inky",
    x = 12,
    y = 11,
-   home = {
+   corner = {
 	  x=2,
 	  y=21
    }
@@ -38,7 +38,7 @@ clyde = {
    name = "clyde",
    x = 13,
    y = 11,
-   home = {
+   corner = {
 	  x=21,
 	  y=21
    }   
@@ -124,10 +124,10 @@ levelcolor = {
    b = 0.34
 }
 
-scatterlength = 7
-scattertimes = 4
-chaselength = 20
-speed = 75
+scatterduration = 7
+maximumscattertimes = 4
+chaseduration = 20
+playerspeed = 75
 blinkyspeed = 40
 pinkyspeed = 50
 inkyspeed = 45
