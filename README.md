@@ -13,3 +13,8 @@ be tested for Pac-Man completeness without having to redesign algorithms or asse
 Pac-Man completeness is an excellent metric of a programming language's usefulness, as Pac-Man is neither too complicated nor too simple of a program.
 Simple examples fail to show the strengths and weaknesses of languages. To see how a programming language is used in a medium-scale project, a medium-scale
 reference must be consulted. 
+
+## Running
+
+To start the game first install [LÖVE2D](https://love2d.org/).
+Then, clone this repository and run `love` in its root directory.
