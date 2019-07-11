@@ -1,3 +1,5 @@
+![screenshot](screenshot.png)
+
 # Pac-Man Implementation in Lua
 
 As Edwin Brady said on episode six of the [CoRecursive Podcast](https://corecursive.com/):
